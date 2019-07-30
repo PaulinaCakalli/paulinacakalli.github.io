@@ -5,8 +5,9 @@ date:   2019-07-30
 categories: 
 ---
 ## Introduction
-Vulnerabilities are very well known on Cyber-Security field. As more and more things relay in information technology, the importance of vulnerabilities is growing rapidly. From Nuclear control systems, hydro power plants to your computer devices, every IT systems has been vulnerable at some point in its life cycle. A vulnerability is a weakness which can be exploited by an attacker to perform unauthorized actions in a computer system. In this project, I have studied the most important vulnerabilities which are Overflow, Code Execution, Memory Corruption, Sql Injection, DoS, Gain Information, Gain Privileges, XSS, Directory Traversal, Http Response Splitting, Bypass Something, CSRF and File Inclusion. I have collected the yearly and monthly data of each vulnerability from https://www.cvedetails.com/ for the time period January 1999–June 2019. Common Vulnerabilities and Exposures (CVE) system provides information for cybersecurity vulnerabilities such as, CVE ID, a description, a publish date, the level of importance (score), etc. 
+Vulnerabilities are very well known on the Cyber-Security field. As more and more things relay in information technology, the importance of vulnerabilities is growing rapidly. From Nuclear control systems, hydro power plants to your computer devices, every IT systems has been vulnerable at some point in its life cycle. A vulnerability is a weakness which can be exploited by an attacker to perform unauthorized actions in a computer system. In this project, I have studied some of the most important vulnerabilities.
 
+I have collected the yearly and monthly data of each vulnerability from https://www.cvedetails.com/ starting from January 1999 to June 2019. 
 Below is a representation of yearly data.
 
 ```R
@@ -44,9 +45,11 @@ ggplot(data = Vuln, aes(x = Year), as.numeric = TRUE) +
 
 ![](../public/Vulnerabilities-Over-Years.png)
 
+In order to have a better forecast, the monthly data is used. This is because we don't have enough data if the study is conducted on an yearly basis.
+
 ```R
 
-Total=read.csv("C:/Users/playbox/Desktop/Vulnerabilities/Monthly data Vulnerabilitiesb - Total.csv")
+Total=read.csv("C:/Users/paulina/Desktop/Vulnerabilities/Monthly data Vulnerabilitiesb - Total.csv")
 Total$Month=as.Date(Total$Month)
 Total <- as.data.frame(Total)
 
@@ -132,7 +135,8 @@ Based on the visualization, there is no seasonality on the six graphs mentioned 
 
 ## Methodology
 
-The data is collected from CVE database, which is used in numerous cybersecurity products and services from around the world including U.S. National Vulnerability Database (NVD). The monthly data of each vulnerability is for the time period January 1999-June 2019. There are 246 observations for every vulnerability types.
+The data is collected from CVE database, which is used in numerous cybersecurity products and services from around the world including U.S. National Vulnerability Database (NVD). Common Vulnerabilities and Exposures (CVE) website provides essential information for cybersecurity vulnerabilities such as, CVE ID, a description, a publish date, the level of importance (score), etc.
+The monthly data of each vulnerability is from January 1999 to June 2019. There are 246 observations for every vulnerability type.
 
 In the second step, I have transformed the data into monthly data for all vulnerabilities for the time period January 1999-June 2019.
 Then, the data is analyzed for the pattern of trend, seasonality and cyclic. Ggseasonplot and ggmonthplot are used to study the seasonality.
