@@ -172,3 +172,21 @@ fitANN1=fitted.values(fitANN)
 fitEts=ets(Total$Total)
 fitEts1=fitted.values(fitEts)
 ```
+
+Below are the methods accuracy.
+
+```R
+accuracy(fitArima)
+                    ME     RMSE      MAE       MPE     MAPE      MASE         ACF1
+   Training set 14.31946 212.7547 134.6948 -55.23432 77.65099 0.8578841 -0.00767389
+```
+```R
+accuracy(fitANN)
+                     ME     RMSE      MAE       MPE     MAPE      MASE        ACF1
+  Training set -0.5757532 60.63429 42.95738 -64.44907 72.47471 0.2735997 0.00802777
+```
+```R
+accuracy(fitEts)
+                   ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
+  Training set 12.48149 214.8705 137.3688 -61.16628 83.69934 0.8749153 0.09734004
+```
