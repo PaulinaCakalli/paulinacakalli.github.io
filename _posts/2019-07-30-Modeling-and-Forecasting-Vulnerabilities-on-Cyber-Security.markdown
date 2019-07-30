@@ -177,16 +177,70 @@ Below are the methods accuracy.
 
 ```R
 accuracy(fitArima)
-                    ME     RMSE      MAE       MPE     MAPE      MASE         ACF1
-   Training set 14.31946 212.7547 134.6948 -55.23432 77.65099 0.8578841 -0.00767389
+                         ME     RMSE      MAE       MPE     MAPE      MASE         ACF1
+      Training set 14.31946 212.7547 134.6948 -55.23432 77.65099 0.8578841 -0.00767389
 ```
 ```R
 accuracy(fitANN)
-                     ME     RMSE      MAE       MPE     MAPE      MASE        ACF1
-  Training set -0.5757532 60.63429 42.95738 -64.44907 72.47471 0.2735997 0.00802777
+                         ME     RMSE      MAE       MPE     MAPE      MASE        ACF1
+      Training set -0.5757532 60.63429 42.95738 -64.44907 72.47471 0.2735997 0.00802777
 ```
 ```R
 accuracy(fitEts)
-                   ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
-  Training set 12.48149 214.8705 137.3688 -61.16628 83.69934 0.8749153 0.09734004
+                         ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
+      Training set 12.48149 214.8705 137.3688 -61.16628 83.69934 0.8749153 0.09734004
 ```
+
+In this case the ANN model seems to be the slightly more accurate model based on the test set RMSE, MAPE and MASE. The ANN model describes better the non-linear nature of the data. 
+
+```R
+ggplot(data =Total,aes(x =Month))+
+  geom_line(aes(y = Total,colour="Total"),alpha = 0.6, size = 0.72)+
+  ylab("Number of Vulnerabilities")+xlab("Time")+
+  geom_line(aes( y =  fitANN1,colour="fitANN1"), alpha = 0.6, size = 0.71)+
+  ggtitle("Monthly Data of Vulnerabilities")+
+  scale_x_date(labels = date_format("%Y-%m"), breaks='2 years')+
+  scale_colour_manual("",
+                      values=c("green","red"),
+                      breaks = c("Total", "fitANN1"),
+                      labels = c("Actual","Fitted ANN"))+
+  theme(
+    plot.title = element_text(color="black", size=12, face="bold.italic"),
+    axis.title.x = element_text(color="black", size=10, face="bold"),
+    axis.title.y = element_text(color="black", size=10, face="bold"),
+    axis.text.x = element_text(angle=45,hjust=1))
+```
+
+![](../public/Fitted-Data.png)
+
+Figure 5. Modeling the data with Artificial Neural Network (ANN)
+
+Furthermore, as it can be seen from the graphic results the ANN fitted values are very close to the real data.
+
+## Forecasting
+
+Below are given the forecasted values by the ANN model, which resulted the best fit of the data.
+
+```R
+f=forecast(fitANN,PI=TRUE,h=12)
+f
+
+ Point     Forecast   Lo 80     Hi 80    Lo 95     Hi 95
+ 247      1005.3793  928.0545 1082.7499 892.3804 1120.8312
+ 248       622.4810  550.6418  700.1276 507.7912  737.9177
+ 249       929.4657  848.4299 1008.0296 801.8744 1058.9968
+ 250      1027.2923  936.6664 1114.0036 894.7663 1180.8927
+ 251       741.8067  658.8352  851.3139 597.2214  910.0960
+ 252       893.0108  798.0413  968.7338 739.0178 1017.7492
+ 253       926.8484  823.9185 1009.8188 751.1406 1067.7841
+ 254       830.6525  686.2151  899.5199 629.0635  966.6916
+ 255       819.9568  717.8193  934.2144 673.5693  993.3874
+ 256      1296.7013 1093.0964 1388.1513 990.7073 1437.5853
+ 257       976.9696  758.7563 1059.7435 639.8099 1136.3516
+ 258       955.3288  801.0520 1085.3273 675.8726 1151.8166
+ 
+autoplot(f,ylab="",ts.colour = 'red',facets = FALSE, conf.int = TRUE)
+```
+![](../public/Forecastes.png)
+
+Figure 6. Visualization for predicted number of vulnerabilities at the time period 07/2019-07/2020  
