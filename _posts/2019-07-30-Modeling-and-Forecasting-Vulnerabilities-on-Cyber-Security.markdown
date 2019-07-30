@@ -95,15 +95,19 @@ Below is presented a visualization of monthly data for most important vulnerabil
 
 Figure 1. Visualization of most important Vulnerabilities
 
-As it can be seen from the graphic results they appear differently, but the meeting point is their non-linear behavior. The number of Overflow vulnerabilities is very low during the time period 1999-2002, then it starts to grow very slowly and during 2018 it increases rapidly with a max value of 654 in June.  The number of Code Execution vulnerabilities is growing slowly from 1999 to 2003, then it increases and in 2005 reaches a max value of 379 in May. After that it starts to decrease until the year 2013 where it start increases again. The number of Memory Corruption vulnerabilities is very low from 1999 to 2005, and then it starts to increase. The max value of 126 is signed in July 2016. The max number of 206 Sql Injection vulnerabilities is in December 2005, there are two high spikes on 2005 and 2009, and also the data behaves with frequently increase-decrease. The max number of 387 DoS vulnerabilities is in July 2017, the number of vulnerabilities is very low at the beginning and then from 2003-2006 it starts to increase-decrease with random fluctuations, after that it increases slowly with a high spike on July 2017 and then it decreases again. The max number of 107 Gain Privileges vulnerabilities is in September 2012, the number of vulnerabilities behaves with random fluctuations. 
+As it can be seen from the graphic results they appear differently, but the meeting point is their non-linear behavior. The number of Overflow vulnerabilities is very low during the time period 1999-2002, then it starts to grow very slowly and during 2018 it increases rapidly with a max value of 654 in June.  The number of Code Execution vulnerabilities is growing slowly from 1999 to 2003, then it increases and in 2005 reaches a max value of 379 in May. After that it starts to decrease until the year 2013 where it start increases again. The number of Memory Corruption vulnerabilities is very low from 1999 to 2005, and then it starts to increase. The max value of 126 is signed in July 2016. The max number of 206 Sql Injection vulnerabilities is in December 2005, there are two high spikes on 2005 and 2009, and also the data behaves with frequently increase-decrease. The max number of 387 DoS vulnerabilities is in July 2017, the number of vulnerabilities is very low at the beginning and then from 2003-2006 it starts to increase-decrease with random fluctuations, after that it increases slowly with a high spike on July 2017 and then it decreases again. The max number of 107 Gain Privileges vulnerabilities is in September 2012, the number of vulnerabilities behaves with random fluctuations.
+
 Based on the visualization, there is no seasonality on the six graphs mentioned above and the data behaves with random fluctuations and high spikes. Since there is a higher interest rate for the total number of all vulnerabilities in Information Security, on the previous step I have transformed the data into the monthly data of total vulnerabilities types.
 
 ## Methodology
 
 The data is collected from CVE database, which is used in numerous cybersecurity products and services from around the world including U.S. National Vulnerability Database (NVD). The monthly data of each vulnerability is for the time period January 1999-June 2019. There are 246 observations for every vulnerability types.
+
 In the second step, I have transformed the data into monthly data for all vulnerabilities for the time period January 1999-June 2019.
 Then, the data is analyzed for the pattern of trend, seasonality and cyclic. Ggseasonplot and ggmonthplot are used to study the seasonality.
+
 Modeling the data with the time series methods like ARIMA (Auto Regressive Integrated Moving Average), ETS (Error, Trend, Seasonality) and ANN (Artificial Neural Networks). Errors like RMSE (Root Mean Square Error), MAPE (Mean Absolute Percentage Error) and MASE (Mean Absolute Scaled Error) have been taken into consideration to decide which model fitted better the real data.
+
 Forecasting the monthly number of vulnerabilities for the time period July 2019- July 2020 with the best time series method that fitted better the data. 
 
 ![](../public/Methodology.png)
@@ -146,6 +150,7 @@ Below is presented the graphic results from ggseasonplot and ggmonthplot command
 Figure 4. Visualization of the results from ggmonthplot and ggseasonplot
 
 Ggmonthplot gives an average for every month, which is calculated from all the data. As it can be seen from the graphic results there is no seasonality and the highest number of vulnerabilities is reached in December, from the other side the lowest number of vulnerabilities is reached in November.
+
 Ggseasonplot is given to show if there is the presence of seasonality, but as it can be seen there is no seasonality and the number of vulnerabilities is very different from a year to the next. 
 
 ## Modeling
