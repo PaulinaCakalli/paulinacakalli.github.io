@@ -92,6 +92,7 @@ plot_grid(A, B, C, D, E, F, labels = c("", "","","","",""), align = "v")
 Below is presented a visualization of monthly data for most important vulnerabilities using RStudio. 
 
 ![](../public/DiffVulnerabilitiesOverMonths.png)
+
 Figure 1. Visualization of most important Vulnerabilities
 
 As it can be seen from the graphic results they appear differently, but the meeting point is their non-linear behavior. The number of Overflow vulnerabilities is very low during the time period 1999-2002, then it starts to grow very slowly and during 2018 it increases rapidly with a max value of 654 in June.  The number of Code Execution vulnerabilities is growing slowly from 1999 to 2003, then it increases and in 2005 reaches a max value of 379 in May. After that it starts to decrease until the year 2013 where it start increases again. The number of Memory Corruption vulnerabilities is very low from 1999 to 2005, and then it starts to increase. The max value of 126 is signed in July 2016. The max number of 206 Sql Injection vulnerabilities is in December 2005, there are two high spikes on 2005 and 2009, and also the data behaves with frequently increase-decrease. The max number of 387 DoS vulnerabilities is in July 2017, the number of vulnerabilities is very low at the beginning and then from 2003-2006 it starts to increase-decrease with random fluctuations, after that it increases slowly with a high spike on July 2017 and then it decreases again. The max number of 107 Gain Privileges vulnerabilities is in September 2012, the number of vulnerabilities behaves with random fluctuations. 
@@ -106,6 +107,7 @@ Modeling the data with the time series methods like ARIMA (Auto Regressive Integ
 Forecasting the monthly number of vulnerabilities for the time period July 2019- July 2020 with the best time series method that fitted better the data. 
 
 ![](../public/Methodology.png)
+
 Figure 2. The methodology of the project
 
 ## Analyzing
@@ -140,6 +142,7 @@ plot_grid(A, B, labels = c("", ""), align = "v")
 Below is presented the graphic results from ggseasonplot and ggmonthplot commands.
 
 ![](../public/ggmonthplot-ggseasonplot.png)
+
 Figure 4. Visualization of the results from ggmonthplot and ggseasonplot
 
 Ggmonthplot gives an average for every month, which is calculated from all the data. As it can be seen from the graphic results there is no seasonality and the highest number of vulnerabilities is reached in December, from the other side the lowest number of vulnerabilities is reached in November.
