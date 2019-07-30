@@ -5,15 +5,46 @@ date:   2019-07-30
 categories: 
 ---
 ## Introduction
-Vulnerabilities are very well known on Cyber-Security field. As more and more things relay in information technology, the importance of vulnerabilities is growing rapidly. From Nuclear control systems, hydro power plants to your computer devices, every IT systems has been vulnerable at some point in its life cycle. A vulnerability is a weakness which can be exploited by an attacker to perform unauthorized actions in a computer system. In this project, I have studied the most important vulnerabilities which are Overflow, Code Execution, Memory Corruption, Sql Injection, DoS, Gain Information, Gain Privileges, XSS, Directory Traversal, Http Response Splitting, Bypass Something, CSRF and File Inclusion. I have collected the monthly data of each vulnerability from https://www.cvedetails.com/ for the time period January 1999–June 2019. Common Vulnerabilities and Exposures (CVE) system provides information for cybersecurity vulnerabilities such as, CVE ID, a description, a publish date, the level of importance (score), etc. 
+Vulnerabilities are very well known on Cyber-Security field. As more and more things relay in information technology, the importance of vulnerabilities is growing rapidly. From Nuclear control systems, hydro power plants to your computer devices, every IT systems has been vulnerable at some point in its life cycle. A vulnerability is a weakness which can be exploited by an attacker to perform unauthorized actions in a computer system. In this project, I have studied the most important vulnerabilities which are Overflow, Code Execution, Memory Corruption, Sql Injection, DoS, Gain Information, Gain Privileges, XSS, Directory Traversal, Http Response Splitting, Bypass Something, CSRF and File Inclusion. I have collected the yearly and monthly data of each vulnerability from https://www.cvedetails.com/ for the time period January 1999–June 2019. Common Vulnerabilities and Exposures (CVE) system provides information for cybersecurity vulnerabilities such as, CVE ID, a description, a publish date, the level of importance (score), etc. 
+
+Below is a representation of yearly data.
 
 ```R
-
 library(tidyverse)
 library(scales)
 library(cowplot)
 library(forecast)
 library(ggfortify)
+
+ggplot(data = Vuln, aes(x = Year), as.numeric = TRUE) +
+  geom_line(aes(y = Vuln$DoS,colour = "Vuln$DoS"),size=1)+
+  geom_line(aes(y = Vuln$Code.Execution,colour="Vuln$Code.Execution"),size=1)+
+  geom_line(aes(y = Vuln$Overflow, colour="Vuln$Overflow"),size=1)+
+  geom_line(aes(y = Vuln$Memory.Corruption, colour="Vuln$Memory.Corruption"),size=1)+
+  geom_line(aes(y = Vuln$Sql.Injection, colour="Vuln$Sql.Injection"),size=1)+
+  geom_line(aes(y = Vuln$XSS, colour="Vuln$XSS"),size=1)+
+  geom_line(aes(y = Vuln$Directory.Traversal, colour="Vuln$Directory.Traversal"),size=1)+
+  geom_line(aes(y = Vuln$Http.Response.Splitting, colour="Vuln$Http.Response.Splitting"),size=1)+
+  geom_line(aes(y = Vuln$Bypass.something, colour="Vuln$Bypass.something"),size=1)+
+  geom_line(aes(y = Vuln$Gain.Information, colour=" Vuln$Gain.Information"),size=1)+
+  geom_line(aes(y = Vuln$Gain.Privileges, colour="Vuln$Gain.Privileges"),size=1)+
+  geom_line(aes(y = Vuln$CSRF, colour="Vuln$CSRF"),size=1)+
+  geom_line(aes(y = Vuln$File.Inclusion, colour="Vuln$File.Inclusion"),size=1)+
+  ggtitle("Vulnerabilities Over Years")+ 
+  scale_colour_manual("",
+      values=c("red","blue","orange","black","purple","yellow","green","brown","blue4","chartreuse4","darkmagenta","mediumvioletred","mediumorchid2"), 
+      breaks = c("Vuln$DoS", "Vuln$Code.Execution","Vuln$Overflow","Vuln$Memory.Corruption","Vuln$Sql.Injection","Vuln$XSS","Vuln$Directory.Traversal","Vuln$Http.Response.Splitting","Vuln$Bypass.something","Vuln$Gain.Information","Vuln$Gain.Privileges","Vuln$CSRF","Vuln$File.Inclusion"),
+      labels = c("DoS", "Code Execution", "Overflow","Memory Corruption","Sql Injection","XSS","Directory Traversal","Http Response Splitting", "Bypass something", "Gain Information","Gain Privileges","CSRF","File Inclusion"))+
+ ylab("Number of Vulnerabilities")+
+ theme(
+    plot.title = element_text(color="black", size=14, face="bold.italic"),
+    axis.title.x = element_text(color="black", size=14, face="bold"),
+    axis.title.y = element_text(color="black", size=14, face="bold"))
+```
+
+![](../public/Vulnerabilities-Over-Years.png)
+
+```R
 
 Total=read.csv("C:/Users/playbox/Desktop/Vulnerabilities/Monthly data Vulnerabilitiesb - Total.csv")
 Total$Month=as.Date(Total$Month)
