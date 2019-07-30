@@ -154,3 +154,21 @@ Ggmonthplot gives an average for every month, which is calculated from all the d
 Ggseasonplot is given to show if there is the presence of seasonality, but as it can be seen there is no seasonality and the number of vulnerabilities is very different from a year to the next. 
 
 ## Modeling
+
+I have studied the time series methods like ARIMA (Auto Regressive Integrated Moving Average), ETS (Error, Trend, Seasonality) and ANN (Artificial Neural Networks).
+
+```R
+# ARIMA
+fitArima=auto.arima(Total$Total)
+fitArima1=fitted.values(fitArima)
+```
+```R
+# ANN
+fitANN=nnetar(Total$Total)
+fitANN1=fitted.values(fitANN)
+```
+```R
+# ETS
+fitEts=ets(Total$Total)
+fitEts1=fitted.values(fitEts)
+```
