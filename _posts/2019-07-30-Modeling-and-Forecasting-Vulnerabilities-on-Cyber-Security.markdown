@@ -27,7 +27,6 @@ ggplot(data = Vuln, aes(x = Year), as.numeric = TRUE) +
   geom_line(aes(y = Vuln$Directory.Traversal, colour="Vuln$Directory.Traversal"),size=1)+
   geom_line(aes(y = Vuln$Http.Response.Splitting, colour="Vuln$Http.Response.Splitting"),size=1)+
   geom_line(aes(y = Vuln$Bypass.something, colour="Vuln$Bypass.something"),size=1)+
-  geom_line(aes(y = Vuln$Gain.Information, colour=" Vuln$Gain.Information"),size=1)+
   geom_line(aes(y = Vuln$Gain.Privileges, colour="Vuln$Gain.Privileges"),size=1)+
   geom_line(aes(y = Vuln$CSRF, colour="Vuln$CSRF"),size=1)+
   geom_line(aes(y = Vuln$File.Inclusion, colour="Vuln$File.Inclusion"),size=1)+
@@ -123,27 +122,47 @@ plot_grid(A, B, C, D, E, F, labels = c("", "","","","",""), align = "v")
 
 ```
 
-Below is presented a visualization of monthly data for most important vulnerabilities using RStudio. 
+Below is the visualization of monthly data for some of the most important vulnerabilities. 
 
 ![](../public/DiffVulnerabilitiesOverMonths.png)
 
-Figure 1. Visualization of most important Vulnerabilities
+Figure 1. Visualization for some of the most important Vulnerabilities
 
-As it can be seen from the graphic results they appear differently, but the meeting point is their non-linear behavior. The number of Overflow vulnerabilities is very low during the time period 1999-2002, then it starts to grow very slowly and during 2018 it increases rapidly with a max value of 654 in June.  The number of Code Execution vulnerabilities is growing slowly from 1999 to 2003, then it increases and in 2005 reaches a max value of 379 in May. After that it starts to decrease until the year 2013 where it start increases again. The number of Memory Corruption vulnerabilities is very low from 1999 to 2005, and then it starts to increase. The max value of 126 is signed in July 2016. The max number of 206 Sql Injection vulnerabilities is in December 2005, there are two high spikes on 2005 and 2009, and also the data behaves with frequently increase-decrease. The max number of 387 DoS vulnerabilities is in July 2017, the number of vulnerabilities is very low at the beginning and then from 2003-2006 it starts to increase-decrease with random fluctuations, after that it increases slowly with a high spike on July 2017 and then it decreases again. The max number of 107 Gain Privileges vulnerabilities is in September 2012, the number of vulnerabilities behaves with random fluctuations.
+As it can be seen from the graphical representation, the only similarity they have is their non-linear nature.
 
-Based on the visualization, there is no seasonality on the six graphs mentioned above and the data behaves with random fluctuations and high spikes. Since there is a higher interest rate for the total number of all vulnerabilities in Information Security, on the previous step I have transformed the data into the monthly data of total vulnerabilities types.
+
+The number of Overflow vulnerabilities is very low between 1999-2002, then it starts to grow slowly and during 2018 it increases rapidly with a maximum value of 654 in June 2018. 
+
+
+The number of Code Execution vulnerabilities is growing slowly from 1999 to 2003, then it increases reaching the maximum value of 379 on May 2005. After that it starts to decrease until 2013 then it starts to increase again. 
+
+
+The number of Memory Corruption vulnerabilities is very low from 1999 to 2005, and then it starts to increase. It reachs the maximum value of 126 in July 2016. 
+
+
+The maximum number of Sql Injection vulnerabilities is in December 2005, reaching 206. The data is frequently increasing-decreasing with two notable spikes on 2005 and 2009. 
+
+
+At the start of data, the number of DoS vulnerabilities is low and we can observe an increase-decrase with random fluctuations. The number of vulnerabilities increases slowly reaching its highest point of 387 on July 2017 to start decreasing again.
+
+
+
+The maximum number of Gain Privileges vulnerabilities is reached in September 2012 with a value of 107.
+
+
+Based on the visualization, there is no seasonality on the six graphs mentioned above and the data behaves with random fluctuations and high spikes. 
 
 ## Methodology
 
 The data is collected from CVE database, which is used in numerous cybersecurity products and services from around the world including U.S. National Vulnerability Database (NVD). Common Vulnerabilities and Exposures (CVE) website provides essential information for cybersecurity vulnerabilities such as, CVE ID, a description, a publish date, the level of importance (score), etc.
 The monthly data of each vulnerability is from January 1999 to June 2019. There are 246 observations for every vulnerability type.
 
-In the second step, I have transformed the data into monthly data for all vulnerabilities for the time period January 1999-June 2019.
-Then, the data is analyzed for the pattern of trend, seasonality and cyclic. Ggseasonplot and ggmonthplot are used to study the seasonality.
+Transforming the data into monthly data for all the vulnerabilities from January 1999 to June 2019.
+Furthermore, the data is analyzed to identify the trend, seasonality and cyclical components. Ggseasonplot and ggmonthplot are used to study the seasonality.
 
-Modeling the data with the time series methods like ARIMA (Auto Regressive Integrated Moving Average), ETS (Error, Trend, Seasonality) and ANN (Artificial Neural Networks). Errors like RMSE (Root Mean Square Error), MAPE (Mean Absolute Percentage Error) and MASE (Mean Absolute Scaled Error) have been taken into consideration to decide which model fitted better the real data.
+Modeling the data with methods like ARIMA (Auto Regressive Integrated Moving Average), ETS (Error, Trend, Seasonality) and ANN (Artificial Neural Networks). Errors like RMSE (Root Mean Square Error), MAPE (Mean Absolute Percentage Error) and MASE (Mean Absolute Scaled Error) have been taken into consideration to decide which model fitted better the real data.
 
-Forecasting the monthly number of vulnerabilities for the time period July 2019- July 2020 with the best time series method that fitted better the data. 
+Forecasting the monthly number of vulnerabilities from July 2019 to July 2020 with the method that better fitted the data. 
 
 ![](../public/Methodology.png)
 
