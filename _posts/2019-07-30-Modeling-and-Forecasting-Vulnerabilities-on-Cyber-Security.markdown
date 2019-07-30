@@ -123,4 +123,26 @@ ggplot(data =Total,aes(x =Month, y = Total,group=1))+
 ```  
   
 Below is given the visualization of monthly data vulnerabilities for the time period 01/1999-06/2019.
+
 ![](../public/Real-Data.png)
+Figure 3. Visualization of Vulnerabilities over Months 
+
+As it can be seen from the graphic results, in this time series the data behavior is non-linear and there is no clear seasonality. The data appears with frequently random fluctuations. The number of vulnerabilities increases slowly from 01/1999 to 11/2002, and then is a high spike on the end of 2002. From 2003 to 2004 it decreases and then a high spike is clearly seen, then it starts to increase with three high spikes until the 2007. From 2007 to 2012 we can see a decreasing trend of vulnerabilities. From 2012 to 2015 an increasing trend is available, which includes two high spikes. From 2015 to 2017 we can see frequently random fluctuations, and then a rapidly increase during the time period 01/2017-05/2018. During 2019 the data starts to decrease with a low spike on 02/2019 and it starts to increase again during the last 3 months. The highest spike of vulnerabilities over months is reached on 07/2018 with a value of 1665. As is described above the data appears with a lot of increase-decrease where the trend pattern is included, and high spikes.
+
+```R
+tsTotal=ts(Total$Total,frequency=12, start=c(1999,1))
+A=ggmonthplot(tsTotal,labels = month.abb,year.labels = TRUE,pch=19,ylab="Number of Vulnerabilities", main = "")
+B=ggseasonplot(tsTotal, year.labels = TRUE, year.labels.left=TRUE, col=1:40, pch=19, main = "", xlab = "Month", ylab = "Number of Vulnerabilities")
+
+plot_grid(A, B, labels = c("", ""), align = "v")
+```
+
+Below is presented the graphic results from ggseasonplot and ggmonthplot commands.
+
+![](../public/ggmonthplot-ggseasonplot.png)
+Figure 4. Visualization of the results from ggmonthplot and ggseasonplot
+
+Ggmonthplot gives an average for every month, which is calculated from all the data. As it can be seen from the graphic results there is no seasonality and the highest number of vulnerabilities is reached in December, from the other side the lowest number of vulnerabilities is reached in November.
+Ggseasonplot is given to show if there is the presence of seasonality, but as it can be seen there is no seasonality and the number of vulnerabilities is very different from a year to the next. 
+
+## Modeling
