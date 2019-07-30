@@ -44,6 +44,8 @@ ggplot(data = Vuln, aes(x = Year), as.numeric = TRUE) +
 
 ![](../public/Vulnerabilities-Over-Years.png)
 
+Figure 1. Visualization of Vulnerabilities over Years
+
 In order to have a better forecast, the monthly data is used. This is because we don't have enough data if the study is conducted on an yearly basis.
 
 ```R
@@ -126,7 +128,7 @@ Below is the visualization of monthly data for some of the most important vulner
 
 ![](../public/DiffVulnerabilitiesOverMonths.png)
 
-Figure 1. Visualization for some of the most important Vulnerabilities
+Figure 2. Visualization for some of the most important Vulnerabilities
 
 As it can be seen from the graphical representation, the only similarity they have is their non-linear nature.
 
@@ -166,7 +168,7 @@ Forecasting the monthly number of vulnerabilities from July 2019 to July 2020 wi
 
 ![](../public/Methodology.png)
 
-Figure 2. The methodology of the project
+Figure 3. The methodology of the project
 
 ## Analyzing
 
@@ -185,7 +187,7 @@ ggplot(data =Total,aes(x =Month, y = Total,group=1))+
 Below is given the visualization of monthly data vulnerabilities for the time period 01/1999-06/2019.
 
 ![](../public/Real-Data.png)
-Figure 3. Visualization of Vulnerabilities over Months 
+Figure 4. Visualization of Vulnerabilities over Months 
 
 As it can be seen from the graphic results, in this time series the data behavior is non-linear and there is no clear seasonality. The data appears with frequently random fluctuations. The number of vulnerabilities increases slowly from 01/1999 to 11/2002, and then is a high spike on the end of 2002. From 2003 to 2004 it decreases and then a high spike is clearly seen, then it starts to increase with three high spikes until the 2007. From 2007 to 2012 we can see a decreasing trend of vulnerabilities. From 2012 to 2015 an increasing trend is available, which includes two high spikes. From 2015 to 2017 we can see frequently random fluctuations, and then a rapidly increase during the time period 01/2017-05/2018. During 2019 the data starts to decrease with a low spike on 02/2019 and it starts to increase again during the last 3 months. The highest spike of vulnerabilities over months is reached on 07/2018 with a value of 1665. As is described above the data appears with a lot of increase-decrease where the trend pattern is included, and high spikes.
 
@@ -201,7 +203,7 @@ Below is presented the graphic results from ggseasonplot and ggmonthplot command
 
 ![](../public/ggmonthplot-ggseasonplot.png)
 
-Figure 4. Visualization of the results from ggmonthplot and ggseasonplot
+Figure 5. Visualization of the results from ggmonthplot and ggseasonplot
 
 Ggmonthplot gives an average for every month, which is calculated from all the data. As it can be seen from the graphic results there is no seasonality and the highest number of vulnerabilities is reached in December, from the other side the lowest number of vulnerabilities is reached in November.
 
@@ -267,7 +269,7 @@ ggplot(data =Total,aes(x =Month))+
 
 ![](../public/Fitted-Data.png)
 
-Figure 5. Modeling the data with Artificial Neural Network (ANN)
+Figure 6. Modeling the data with Artificial Neural Network (ANN)
 
 Furthermore, as it can be seen from the graphic results the ANN fitted values are very close to the real data.
 
@@ -297,4 +299,4 @@ autoplot(f,ylab="",ts.colour = 'red',facets = FALSE, conf.int = TRUE)
 ```
 ![](../public/Forecastes.png)
 
-Figure 6. Visualization for predicted number of vulnerabilities at the time period 07/2019-07/2020  
+Figure 7. Visualization for predicted number of vulnerabilities at the time period 07/2019-07/2020  
