@@ -1,5 +1,4 @@
 # Dependencies
-<body class="theme-base-0b">
 markdown:         redcarpet
 highlighter:      pygments
 
@@ -22,5 +21,3 @@ paginate:         5
 
 # Custom vars
 version:          2.1.0
-
-</body>
