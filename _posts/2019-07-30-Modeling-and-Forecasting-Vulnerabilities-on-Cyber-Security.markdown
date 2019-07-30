@@ -90,3 +90,5 @@ plot_grid(A, B, C, D, E, F, labels = c("", "","","","",""), align = "v")
 ```
 
 Below is presented a visualization of monthly data for most important vulnerabilities using RStudio. 
+
+![](../public/DiffVulnerabilitiesOverMonths.png)
