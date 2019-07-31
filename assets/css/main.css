@@ -1479,3 +1479,8 @@ a.newer-posts:hover {
     font-size: 21px;
   }
 }
+
+
+p{
+	align: justify;
+}
