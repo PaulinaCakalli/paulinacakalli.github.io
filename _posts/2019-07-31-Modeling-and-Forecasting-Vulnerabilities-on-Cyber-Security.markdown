@@ -186,7 +186,7 @@ ggplot(data =Total,aes(x =Month, y = Total,group=1))+
     axis.text.x = element_text(angle=45,hjust=1))
 ```  
 
-In the image below, I visualized the monthly data for *all* the vulnerabilities from January 1999 to July 2019.
+In the image below, I visualized the monthly data for *all* the vulnerabilities from January 1999 to June 2019.
 
 ![](../public/Real-Data.png)
 
@@ -303,4 +303,8 @@ autoplot(f,ylab="",ts.colour = 'red',facets = FALSE, conf.int = TRUE)
 ```
 ![](../public/Forecastes.png)
 
-Figure 7. Visualization for predicted number of vulnerabilities at the time period 07/2019-07/2020  
+Figure 7. Visualization for predicted number of vulnerabilities at the time period 07/2019-07/2020
+
+From the forecast graphic we can see that the forecasted data is in harmony with the previous data.
+Doing a comparison on the number of real vulnerabilities and the forecasted number for July 2019, the difference between the values is small. Additionally, if a confidence interval of 95% is used, the real value of 1088 is included in the confidence interval.
+
