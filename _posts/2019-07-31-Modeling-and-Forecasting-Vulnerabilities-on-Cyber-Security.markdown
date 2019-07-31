@@ -5,10 +5,10 @@ date:   2019-07-30
 categories: 
 ---
 ## Introduction
-Vulnerabilities are very well known on the Cyber-Security field. As more and more things relay in information technology, the importance of vulnerabilities is growing rapidly. From Nuclear control systems, hydro power plants to your computer devices, every IT systems has been vulnerable at some point in its life cycle. A vulnerability is a weakness which can be exploited by an attacker to perform unauthorized actions in a computer system. In this project, I have studied some of the most important vulnerabilities.
+As more and more things relay in information technology, the importance of vulnerabilities is growing rapidly. From Nuclear control systems, hydro power plants to your computer devices, every IT systems has been vulnerable at some point in its life cycle. A vulnerability is a weakness which can be exploited by an attacker to perform unauthorized actions in a computer system. In this project, I have studied some of the most important vulnerabilities.
 
 I have collected the yearly and monthly data of each vulnerability from https://www.cvedetails.com/ starting from January 1999 to June 2019. 
-Below is a representation of yearly data.
+Below is a representation of the yearly data.
 
 ```R
 library(tidyverse)
