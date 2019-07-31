@@ -6,6 +6,15 @@
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
+ 
+ 
+ 
+
+p {
+	align: justify;
+}
+
+
 html {
   line-height: 1.15;
   /* 1 */
@@ -1480,9 +1489,3 @@ a.newer-posts:hover {
   }
 }
 
-/*
-p{
-	align: justify;
-}
-
-*/
