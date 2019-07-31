@@ -185,13 +185,15 @@ ggplot(data =Total,aes(x =Month, y = Total,group=1))+
     axis.title.y = element_text(color="black", size=10, face="bold"),
     axis.text.x = element_text(angle=45,hjust=1))
 ```  
-  
-Below is given the visualization of monthly data vulnerabilities for the time period 01/1999-06/2019.
+
+In the image below, I visualized the monthly data for *all* the vulnerabilities from January 1999 to July 2019.
 
 ![](../public/Real-Data.png)
+
 Figure 4. Visualization of Vulnerabilities over Months 
 
-As it can be seen from the graphic results, in this time series the data nature is non-linear and there is no clear seasonality. The data appears with frequently random fluctuations. The number of vulnerabilities increases slowly from 01/1999 to 11/2002, and then it reaches a high spike at the end of 2002. From 2003 to 2004 it decreases and then a high spike is clearly seen, then it starts to increase with three high spikes until the 2007. From 2007 to 2012 we can see a decreasing trend of vulnerabilities. From 2012 to 2015 an increasing trend is available, which includes two high spikes. From 2015 to 2017 we can see frequently random fluctuations, and then a rapidly increase during the time period from 01/2017 to 05/2018. During 2019 the data starts to decrease with a low spike on 02/2019 and it starts to increase again during the last 3 months. The highest spike of vulnerabilities over months is reached on 07/2018 with a value of 1665. As is described above the data appears with a lot of increase-decrease where the trend pattern is included, and high spikes.
+As it can be seen from the graphic results, in this time series the data nature is non-linear and there is no clear seasonality. The data appears with frequent random fluctuations. The number of vulnerabilities increases slowly from January 1999 to November 2002, and then it reaches a high spike in the end of 2002. From 2003 to 2004 it decreases and then it starts to increase with four high spikes until the 2007. From 2007 to 2012 we can see a decreasing trend of vulnerabilities. From 2012 to 2015 an increasing trend is observed, which includes two high spikes. From 2015 to 2017 we can see frequent random fluctuations, and then a high increase from January 2017 to May 2018. During 2019 the data starts to decrease hitting the lowest point for this year on February 2019. After that it starts to increase again during the last 3 months. The highest spike of vulnerabilities over months is reached on July 2018 with a value of 1665. 
+We can observe a trend pattern on the increase and decrease of the number of vulnerabilities.
 
 ```R
 tsTotal=ts(Total$Total,frequency=12, start=c(1999,1))
@@ -201,19 +203,19 @@ B=ggseasonplot(tsTotal, year.labels = TRUE, year.labels.left=TRUE, col=1:40, pch
 plot_grid(A, B, labels = c("", ""), align = "v")
 ```
 
-Below is presented the graphic results from ggseasonplot and ggmonthplot commands.
+Below is the representation of the graphic results from ggseasonplot and ggmonthplot commands.
 
 ![](../public/ggmonthplot-ggseasonplot.png)
 
 Figure 5. Visualization of the results from ggmonthplot and ggseasonplot
 
-Ggmonthplot gives an average for every month, which is calculated from all the data. As it can be seen from the graphic results there is no seasonality and the highest number of vulnerabilities is reached in December, from the other side the lowest number of vulnerabilities is reached in November.
+Ggmonthplot gives an average for every month, which is calculated from all the data. As it can be seen from the graphic results there is no seasonality and the highest number of vulnerabilities is reached in December, on the other side the lowest number of vulnerabilities is reached in November.
 
-Ggseasonplot is given to show if there is the presence of seasonality, but as it can be seen there is no seasonality and the number of vulnerabilities is very different from a year to the next. 
+Ggseasonplot is used to show if there is the presence of seasonality. As it can be seen from the graphic representation, there is no seasonality and the number of vulnerabilities is very different from month to month. 
 
 ## Modeling
 
-I have studied the time series methods like ARIMA (Auto Regressive Integrated Moving Average), ETS (Error, Trend, Seasonality) and ANN (Artificial Neural Networks).
+For this research, I studied the following time series methods: ARIMA (Auto Regressive Integrated Moving Average), ETS (Error, Trend, Seasonality) and ANN (Artificial Neural Networks).
 
 ```R
 # ARIMA
@@ -231,7 +233,7 @@ fitEts=ets(Total$Total)
 fitEts1=fitted.values(fitEts)
 ```
 
-Below are the methods accuracy.
+The methods accuracy can be found below: 
 
 ```R
 accuracy(fitArima)
@@ -249,7 +251,7 @@ accuracy(fitEts)
       Training set 12.48149 214.8705 137.3688 -61.16628 83.69934 0.8749153 0.09734004
 ```
 
-In this case the ANN model seems to be the slightly more accurate model based on the test set RMSE, MAPE and MASE. The ANN model describes better the non-linear nature of the data. 
+In this case the ANN model seems to be the most accurate model based on the test set RMSE, MAPE and MASE. The ANN model describes the non-linear nature of the data. 
 
 ```R
 ggplot(data =Total,aes(x =Month))+
@@ -277,7 +279,7 @@ Furthermore, as it can be seen from the graphic results the ANN fitted values ar
 
 ## Forecasting
 
-Below are given the forecasted values by the ANN model, which resulted the best fit of the data.
+Below are the forecasted values by the ANN model.
 
 ```R
 f=forecast(fitANN,PI=TRUE,h=12)
