@@ -58,14 +58,14 @@ Total <- as.data.frame(Total)
 
 # Overflow
 A=ggplot(data =Total,aes(x =Month, y = Overflow, group=1))+
-      geom_line(color = "darkblue", alpha = 0.6, size = 0.6)+ ylab("Number of Vuln.")+xlab("Time")+
-      scale_x_date(labels = date_format("%Y-%m"), breaks='3 years')+
-      ggtitle("Overflow ")+
-      theme(
-        plot.title = element_text(color="black", size=10, face="bold.italic"),
-        axis.title.x = element_text(color="black", size=10, face="bold"),
-        axis.title.y = element_text(color="black", size=10, face="bold"),
-        axis.text.x = element_text(angle=45,hjust=1))
+     geom_line(color = "darkblue", alpha = 0.6, size = 0.6)+ ylab("Number of Vuln.")+xlab("Time")+
+     scale_x_date(labels = date_format("%Y-%m"), breaks='3 years')+
+     ggtitle("Overflow ")+
+     theme(
+       plot.title = element_text(color="black", size=10, face="bold.italic"),
+       axis.title.x = element_text(color="black", size=10, face="bold"),
+       axis.title.y = element_text(color="black", size=10, face="bold"),
+       axis.text.x = element_text(angle=45,hjust=1))
   
 # Code Execution
 B=ggplot(data =Total,aes(x =Month, y = Code.Execution,group=1))+
