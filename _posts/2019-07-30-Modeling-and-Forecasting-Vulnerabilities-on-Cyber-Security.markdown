@@ -17,6 +17,8 @@ library(cowplot)
 library(forecast)
 library(ggfortify)
 
+Vuln=read.csv("C:/Users/paulina/Desktop/Vulnerabilities/Vulnerabilities Over Years.csv")
+
 ggplot(data = Vuln, aes(x = Year), as.numeric = TRUE) +
   geom_line(aes(y = Vuln$DoS,colour = "Vuln$DoS"),size=1)+
   geom_line(aes(y = Vuln$Code.Execution,colour="Vuln$Code.Execution"),size=1)+
