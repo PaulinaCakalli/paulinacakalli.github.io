@@ -66,7 +66,7 @@ for (i in 1:12)
 
 Graphic results
 
- ![](scatter-plot-gamma.png)
+ ![](../public/scatter-plot-gamma.png)
 
 ### Autocorrelation coefficient and correlogram graph
 
@@ -88,11 +88,11 @@ Graphic results
 
 Graphic results for 12 lag's 
 
-  ![](acf-correlation-12lags.png) 
+  ![](../public/acf-correlation-12lags.png) 
 
 Graphic results for all the data
 
-  ![](acf-correlation-alldata.png)  
+  ![](../public/acf-correlation-alldata.png)  
  
 PACF Autocorrelation Function
 
@@ -102,8 +102,8 @@ ggPacf(ts_data,lag.max = length(ts_data), plot = TRUE, na.action =na.contiguous,
 ```
 Graphic results
 
-  ![](Gamma-pacf-12.png)
-  ![](Gamma-pacf-alldata.png) 
+  ![](../public/Gamma-pacf-12.png)
+  ![](../public/Gamma-pacf-alldata.png) 
  
  
 ### 2) Simulation of a Time Series by combining Linear Regression with Normal Distribution
@@ -132,7 +132,7 @@ p + stat_smooth(color = "#000099", fill = "#000099",method = "loess")
 ```
 Graphic results
 
-![](LR-ND-Series.png)
+![](../public/LR-ND-Series.png)
 
 
 ### Scatter plots for *N*<sub>1</sub> , *N*<sub>2</sub> , *N*<sub>3</sub> , ..., *N*<sub>12</sub>
@@ -163,7 +163,7 @@ for (i in 1:12)
 ```
 Graphic results
 
-![](LR-ND-Scatterplots.png)
+![](../public/LR-ND-Scatterplots.png)
 
 
 ### Autocorrelation coefficient and correlogram graph
@@ -190,11 +190,11 @@ Graphic results
 
 Graphic results for 12 lag's 
 
-  ![](LR-ND-Acf-correlation-12lags.png) 
+  ![](../public/LR-ND-Acf-correlation-12lags.png) 
 
 Graphic results for all the data
 
-  ![](LR-ND-Acf-correlation-alldata.png)  
+  ![](../public/LR-ND-Acf-correlation-alldata.png)  
  
 PACF Autocorrelation Function
 
@@ -204,8 +204,8 @@ ggPacf(ts_data1,lag.max = length(ts_data), plot = TRUE, na.action =na.contiguous
 ```
 Graphic results
 
-  ![](LR-ND-Pacf-correlation-12lags.png)
-  ![](LR-ND-Pacf-correlation-alldata.png) 
+  ![](../public/LR-ND-Pacf-correlation-12lags.png)
+  ![](../public/LR-ND-Pacf-correlation-alldata.png) 
   
   
 :octocat: 
