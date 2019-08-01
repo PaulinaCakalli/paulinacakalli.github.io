@@ -34,9 +34,10 @@ ggplot(data = Vuln, aes(x = Year), as.numeric = TRUE) +
   geom_line(aes(y = Vuln$File.Inclusion, colour="Vuln$File.Inclusion"),size=1)+
   ggtitle("Vulnerabilities Over Years")+ 
   scale_colour_manual("",
-      values=c("red","blue","orange","black","purple","yellow","green","brown","blue4","chartreuse4","darkmagenta","mediumvioletred","mediumorchid2"), 
-      breaks = c("Vuln$DoS", "Vuln$Code.Execution","Vuln$Overflow","Vuln$Memory.Corruption","Vuln$Sql.Injection","Vuln$XSS","Vuln$Directory.Traversal","Vuln$Http.Response.Splitting","Vuln$Bypass.something","Vuln$Gain.Information","Vuln$Gain.Privileges","Vuln$CSRF","Vuln$File.Inclusion"),
-      labels = c("DoS", "Code Execution", "Overflow","Memory Corruption","Sql Injection","XSS","Directory Traversal","Http Response Splitting", "Bypass something", "Gain Information","Gain Privileges","CSRF","File Inclusion"))+
+     values=c("red","blue","orange","black","purple","yellow","green","brown","blue4","chartreuse4","darkmagenta","mediumvioletred","mediumorchid2"), 
+breaks = c("Vuln$DoS", 
+"Vuln$Code.Execution","Vuln$Overflow","Vuln$Memory.Corruption","Vuln$Sql.Injection","Vuln$XSS","Vuln$Directory.Traversal","Vuln$Http.Response.Splitting","Vuln$Bypass.something","Vuln$Gain.Information","Vuln$Gain.Privileges","Vuln$CSRF","Vuln$File.Inclusion"),
+labels = c("DoS", "Code Execution", "Overflow","Memory Corruption","Sql Injection","XSS","Directory Traversal","Http Response Splitting", "Bypass something", "Gain Information","Gain Privileges","CSRF","File Inclusion"))+
  ylab("Number of Vulnerabilities")+
  theme(
     plot.title = element_text(color="black", size=14, face="bold.italic"),
