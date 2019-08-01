@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Time Series Simulation and Visualization"
+date:   2019-06-07
+categories: 
+---
 ### 1) Simulation of a Time Series with Gamma Distribution and Graphical Representation
 
 1) In the time series, 500 values were simulated by Gamma Distribution.
