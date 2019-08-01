@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Modeling and Forecasting Vulnerabilities on Cyber-Security"
+title:  "Modeling and Forecasting Vulnerabilities in Cyber-Security"
 date:   2019-07-31
 categories: 
 ---
