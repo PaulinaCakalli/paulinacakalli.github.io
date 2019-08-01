@@ -34,7 +34,7 @@ p + stat_smooth(color = "#FC4E07", fill = "#FC4E07",method = "loess")
 
 Graphic results
 
- ![](public/gamma-series-graphic.png)
+ ![](/public/gamma-series-graphic.png)
 
 
 ### Scatter plots for *N*<sub>1</sub> , *N*<sub>2</sub> , *N*<sub>3</sub> , ..., *N*<sub>12</sub>
