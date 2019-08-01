@@ -308,3 +308,4 @@ Figure 7. Visualization for predicted number of vulnerabilities at the time peri
 From the forecast graphic we can see that the forecasted data is in harmony with the previous data.
 Doing a comparison on the number of real vulnerabilities and the forecasted number for July 2019, the difference between the values is small. Additionally, if a confidence interval of 95% is used, the real value of 1088 is included in the confidence interval.
 
+:octocat: 
