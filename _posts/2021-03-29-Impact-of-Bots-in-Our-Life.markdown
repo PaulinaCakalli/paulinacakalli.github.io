@@ -16,6 +16,7 @@ Your website can be scraped for many reasons: your competitor can scrape your we
 
 ## Example of product scraping in an e-commerce business	
 Usually, 40% of the traffic on your website is coming from bots. In this example, we have presented a time series that shows the number of requests in product paths coming from humans vs bots. 
+
 ![](../public/web_scraping_blog.png)
 As we can see from the graph above the number of requests coming from bots is very high compared to humans. In this case, 79% of the traffic in the product paths is coming from scrapers and only 21% from humans.
 
@@ -26,6 +27,7 @@ While account takeover fraud is using bots to access a legitimate user’s login
 
 ## Example of ATO/Credential Stuffing attacks in an e-commerce business
 In this plot, we have presented a time series that shows the number of requests in login paths coming from human’s vs bots. Most of the spikes we see in the login are credential stuffing attacks, but we can also see other spikes which can be part of a testing and is not required to be mitigated. There are some kind of attacks: sophisticated or unsophisticated. A sophisticated attack is in terms of distribution by IPs, data centres, countries, etc, while unsophisticated attacks may be very massive in terms of login attempts but very less distributed. Another challenge of attacks is the volume of requests.
+
 ![](../public/credentialstuffing_blog.png)
 In this case, approximately 64% of the login activity is coming from bots that are trying to gain access to some accounts and use it for malicious purposes. In order to prevent their customers from this threat, companies are investing in advanced bot management.
 ## How can Machine Learning help to identify bots?
